@@ -2,13 +2,6 @@ pipeline {
   
     agent any
 
-    tools {
-        maven = 'Maven'
-    }
-
-    environment {
-    }
-
     parameters {
         choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: '')
         booleanParam(name: 'skipTest', defaultValue: false, description: '')
@@ -19,7 +12,6 @@ pipeline {
             steps {
                 echo 'Building the application...'
                 echo "Build Number = ${BUILD_NUMBER}"
-                sh "mvn install"
             }
         }
         stage('Test') {
