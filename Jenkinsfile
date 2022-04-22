@@ -19,4 +19,15 @@ pipeline {
             }
         }
     }
+  post {
+    always {
+      echo 'Post'
+    }
+    success {
+      echo 'The pipeline was a success!'
+    }
+    failure {
+      echo 'The pipeline was a failure!'
+    }
+  }
 }
