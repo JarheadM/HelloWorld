@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        BUILD_NUMBER = 1
+        VERSION_NUMBER = 1 + BUILD_NUMBER
     }
 
     stages {
@@ -11,6 +11,7 @@ pipeline {
             steps {
                 echo 'Building the application...'
                 echo "Build Number = ${BUILD_NUMBER}"
+                echo "Version Number = ${VERSION_NUMBER}"
             }
         }
         stage('Test') {
