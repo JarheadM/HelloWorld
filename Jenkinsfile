@@ -13,7 +13,6 @@ pipeline {
                 echo 'Building the application...'
                 javac HelloWorld.java
                 java HelloWorld
-                sh "ls-ltr"
             }
         }
         stage('Test') {
