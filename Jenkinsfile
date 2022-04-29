@@ -11,7 +11,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the application...'
-                echo "Build Number = ${BUILD_NUMBER}"
+                javac HelloWorld.java
+                java HelloWorld
+                mvn clean package ./HelloPackage
+                sh "ls-ltr"
             }
         }
         stage('Test') {
