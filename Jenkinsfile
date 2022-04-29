@@ -13,7 +13,6 @@ pipeline {
                 echo 'Building the application...'
                 javac HelloWorld.java
                 java HelloWorld
-                mvn clean package ./HelloPackage
                 sh "ls-ltr"
             }
         }
